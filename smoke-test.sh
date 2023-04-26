@@ -51,13 +51,12 @@ echo
 
 echo
 echo "\033[4mEmoji Modifier Sequence\033[24m"
-echo -n " "
-echo -n "🖖"
-echo -n "🖖🏻"
-echo -n "🖖🏼"
-echo -n "🖖🏽"
-echo -n "🖖🏾"
-echo -n "🖖🏿"
+echo -n " 🖖"
+echo -n " 🖖🏻"
+echo -n " 🖖🏼"
+echo -n " 🖖🏽"
+echo -n " 🖖🏾"
+echo -n " 🖖🏿"
 echo -n ""
 
 echo

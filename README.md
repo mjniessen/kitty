@@ -58,3 +58,7 @@ symbol_map U+F500-U+FD46 Symbols Nerd Font
 symbol_map U+E300-U+E3EB Symbols Nerd Font
 ```
 
+## smoke-test.sh
+
+![smoke-test](smoke-test.png)
+

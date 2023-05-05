@@ -18,12 +18,12 @@ echo " \033[4mUnderline\033[24m"
 echo
 
 echo "\033[4mLigatures\033[24m"
-echo " == === !== >= <= =>"
+echo " != == === !== >= <= => --> >>- ~~"
 
 echo
 
 echo "\033[4mSymbols\033[24m"
-echo " 契          勒 鈴  "
+echo "      󰾆      󰑧  󰒲   "
 
 echo
 

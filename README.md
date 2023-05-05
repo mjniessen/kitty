@@ -15,9 +15,9 @@ bold_italic_font auto
 
 Installed and for kitty useable fonts can be listed with ```kitty list-fonts```
 
-No need to install patched fonts, just install the font containingthe symbols.
+No need to install patched fonts, just install the font containing the [symbols only](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.0/NerdFontsSymbolsOnly.zip) and keep your non-patched fonts.
 
-Generates ```symbol_map``` lines for ```kitty.conf``` out of the ```test-fonts.sh``` from Nerd Fonts to provide nerd symbols for a kitty terminal (https://github.com/kovidgoyal/kitty) with non-patched fonts.
+Generates ```symbol_map``` lines for ```kitty.conf``` out of the ```test-fonts.sh``` from Nerd Fonts to provide nerd symbols for a [kitty terminal](https://github.com/kovidgoyal/kitty) with non-patched fonts.
 
 
 ```

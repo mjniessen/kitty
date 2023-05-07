@@ -1,0 +1,64 @@
+#!/usr/bin/env bash
+
+gh_file="https://github.com/ryanoasis/nerd-fonts/raw/master/bin/scripts/test-fonts.sh"
+
+# Character Functions {{{
+# DESC: Get character code of a single character
+# ARGS: $1 : Character
+# OUTS: Character code as integer
+function ord {
+  printf %d "'$1"
+}
+
+# DESC: Get unicode character by eight digit code
+# ARGS: $1 : unicode cahracter number
+# OUTS: Unicode character as string
+function chr {
+  printf '\\U%08X' "$1"
+}
+
+function list_symbols() {
+  local array=($1)
+
+  while (( ${#array[*]} > 1 ))
+  do
+    from=${array[0]}
+    to=${array[1]}
+    array=("${array[@]:2}")
+    printf "\nU+${from^^}-U+${to^^}: "
+    for code in $(seq $((16#$from)) $((16#$to)))
+    do
+      char=$(chr $code)
+      printf "$char "
+    done
+    printf "\n"
+  done
+
+  echo
+}
+
+function headline() {
+  echo -e "\033[4m${1%\"*}\033[24m"
+}
+
+function main() {
+  while read line
+  do
+    case "$line" in
+      "echo \"Nerd Fonts - All"*)
+        # skip to prevent duplicates
+        exit
+        ;;
+      "echo \"Nerd Fonts - "*)
+        headline "${line#*\"}"
+        ;;
+      "print-unicode-ranges"*)
+        list_symbols "${line#* }"
+        ;;
+    esac
+  done <<< $(curl -sSL ${gh_file})
+}
+
+if ! (return 0 2> /dev/null); then
+    main "$@"
+fi

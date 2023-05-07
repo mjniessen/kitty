@@ -25,7 +25,7 @@ function list_symbols() {
     from=${array[0]}
     to=${array[1]}
     array=("${array[@]:2}")
-    printf "\nU+${from^^}-U+${to^^}: "
+    [[ $from == $to ]] && printf "\nU+${from^^}: " || printf "\nU+${from^^}-U+${to^^}: "
     for code in $(seq $((16#$from)) $((16#$to)))
     do
       char=$(chr $code)

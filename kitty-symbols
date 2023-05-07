@@ -25,7 +25,7 @@ function list_symbols() {
     from=${array[0]}
     to=${array[1]}
     array=("${array[@]:2}")
-    printf "\nU+${from^^}-U+${to^^}: "
+    [[ $from == $to ]] && printf "\nU+${from^^}: " || printf "\nU+${from^^}-U+${to^^}: "
     for code in $(seq $((16#$from)) $((16#$to)))
     do
       char=$(chr $code)
@@ -38,7 +38,7 @@ function list_symbols() {
 }
 
 function headline() {
-  echo -e "\033[4m${1%\"*}\033[24m"
+  echo -e "\033[4m${1}\033[24m"
 }
 
 function main() {
@@ -53,14 +53,14 @@ function main() {
     local sym_line=${line#* }
     local range=${sym_line%% *}
     local font=${sym_line#* }
+
     comment=${comment#* }
     comment=${comment//\"/}
-
-    echo -e "\033[4m$comment\033[24m"
+    headline "$comment"
+ 
     range=${range//[-,]/ }
     range=${range//U+/}
     list_symbols "$range"
-    
   done <"${file}"
 }
 

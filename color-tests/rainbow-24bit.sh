@@ -4,12 +4,15 @@
 #          You should see smooth color transitions or even no transitions at all. The higher
 #          the width of the terminal, the smoother the transitions.
 #
+#  https://github.com/mjniessen/kitty/blob/main/color-tests/rainbow-24bit.sh
+#
 # Original idea and code can be found here: https://gist.github.com/XVilka/8346728
 # I just got rid of the awk stuff and bashified some things.
-#    -- Maurice J Niessen -- https://github.com/mjniessen/kitty
+# -- Maurice J Niessen 
 
 function rainbow {
-    local width=${1:-80}
+    local width
+    (( width=$(tput cols)-1 ))
     local colnum
     local r; local g; local b
     for (( colnum=0; colnum<=width; colnum++ ))
@@ -24,11 +27,10 @@ function rainbow {
     done
 }
 
-((cols=$(tput cols)-1))
 typeset -a colrs
 
 # Reset output, if something goes wrong
 trap 'tput sgr0; echo' EXIT
 
-rainbow "$cols"
+rainbow
 

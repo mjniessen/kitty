@@ -14,7 +14,12 @@ echo " Normal"
 echo " \033[1mBold\033[22m"
 echo " \033[3mItalic\033[23m"
 echo " \033[3;1mBold Italic\033[0m"
-echo " \033[4mUnderline\033[24m"
+echo " \033[4mLegacy Underline\033[24m"
+echo " \033[4:1mStraight Underline\033[4:0m"
+echo " \033[4:2mDouble Underline\033[4:0m"
+echo " \033[4:3mCurly Underline\033[4:0m"
+echo " \033[4:4mDotted Underline\033[4:0m"
+echo " \033[4:5mDashed Underline\033[4:0m"
 echo
 
 echo "\033[4mLigatures\033[24m"
@@ -38,7 +43,7 @@ echo -n "🇦🇨 "
 #
 echo -n "🇿🇼 "
 #
-echo -n "🇨🇭 " 
+echo -n "🇨🇭 "
 # EU - E
 echo -n "🇪🇺 "
 
@@ -47,7 +52,6 @@ echo -n "🇩🇪 "
 # UN - United Nations
 echo -n "🇺🇳 "
 echo
-
 
 echo
 echo "\033[4mEmoji Modifier Sequence\033[24m"
@@ -65,11 +69,9 @@ echo
 echo "\033[4mEmoji ZWJ Sequences\033[24m"
 echo -n " "
 echo -n "👨‍👧"
-echo -n "🏴‍☠️" 
+echo -n "🏴‍☠️"
 echo -n "🏳️‍🌈"
 echo -n "😶‍🌫️"
 echo -n "❤️‍🩹"
 echo -n "👩‍🔧"
 echo -n "🧛🏻‍♀️"
-
-
